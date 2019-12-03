@@ -112,33 +112,39 @@ const carnivoresOnly = function(dinos) {
   // } else if (dinos.carnivore !== true) {
   
   // }
-  dinos.forEach(dinos=> isCarnivore(dinos) ? newArr.push(dinos) : "")
+  dinos.forEach(dinos=> isCarnivore(dinos) ? newArr.push(dinos) : '')
   return newArr
 }
 
 const herbivoresOnly = function(dinos) {
   const newArr = []
-  dinos.forEach(dinos=> !isCarnivore(dinos) ? newArr.push(dinos) : "")
+  dinos.forEach(dinos=> !isCarnivore(dinos) ? newArr.push(dinos) : '')
   return newArr
 }
 
 
 const extinctOnly = function(dinos) {
   const newArr = []
-  dinos.forEach(dinos=> isExtinct(dinos) ? newArr.push(dinos) : "")
+  dinos.forEach(dinos=> isExtinct(dinos) ? newArr.push(dinos) : '')
   return newArr
 }
 
 const notExtinct = function(dinos) {
   const newArr = []
-  dinos.forEach(dinos=> !isExtinct(dinos) ? newArr.push(dinos) : "")
+  dinos.forEach(dinos=> !isExtinct(dinos) ? newArr.push(dinos) : '')
   return newArr
 }
 
 const triassicOnly = function(dinos) {
+  const newArr = []
+  dinos.forEach(dinos=> isTriassic(dinos) ? newArr.push(dinos) : '')
+  return newArr
 }
 
 const notTriassic = function(dinos) {
+  const newArr = []
+  dinos.forEach(dinos=> !isTriassic(dinos) ? newArr.push(dinos) : '')
+  return newArr
 }
 
 
