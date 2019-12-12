@@ -88,56 +88,42 @@ const isCretaceous = function(dinosaur) {
 }
 
 const singularizeDinos = function(dinos) {
-  const newArr = [];
-  dinos.forEach(dinos=>newArr.push(makeSingular(dinos)));
-  return newArr
+
+return dinos.map(dino =>(makeSingular(dino)));
+
 }
 
 const truncateDinos = function(dinos) {
-  const newArr = [];
-  dinos.forEach(dinos=>newArr.push(truncateSpecies(dinos)));
-  return newArr
+return dinos.map(dino =>(truncateSpecies(dino)));
 }
 
 const makeAllExtinct = function(dinos) {
-  const newArr = [];
-  dinos.forEach(dinos=>newArr.push(makeExtinct(dinos)))
-  return newArr
+return dinos.map(dino => (makeExtinct(dino)))
 }
 
 const carnivoresOnly = function(dinos) {
-  const newArr = [];
-  // if (dinos.carnivore === true) {
-  //   newArr.push(dinos)
-  // } else if (dinos.carnivore !== true) {
-  
-  // }
-  dinos.forEach(dinos=> isCarnivore(dinos) ? newArr.push(dinos) : '')
+  let newArr = dinos.filter(dinos => isCarnivore(dinos))
   return newArr
 }
 
 const herbivoresOnly = function(dinos) {
-  const newArr = []
-  dinos.forEach(dinos=> !isCarnivore(dinos) ? newArr.push(dinos) : '')
+  const newArr = dinos.filter(dinos=> !isCarnivore(dinos))
   return newArr
 }
 
 
 const extinctOnly = function(dinos) {
-  const newArr = []
-  dinos.forEach(dinos=> isExtinct(dinos) ? newArr.push(dinos) : '')
+  let newArr = dinos.filter(dinos=> isExtinct(dinos))
   return newArr
 }
 
 const notExtinct = function(dinos) {
-  const newArr = []
-  dinos.forEach(dinos=> !isExtinct(dinos) ? newArr.push(dinos) : '')
+  let newArr = dinos.filter(dinos=> !isExtinct(dinos))
   return newArr
 }
 
 const triassicOnly = function(dinos) {
-  const newArr = []
-  dinos.forEach(dinos=> isTriassic(dinos) ? newArr.push(dinos) : '')
+  let newArr = dinos.filter(dinos=> isTriassic(dinos))
   return newArr
 }
 
